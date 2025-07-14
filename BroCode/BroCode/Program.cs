@@ -6,7 +6,7 @@ namespace BroCode
   {
     public static void Main(string[] args)
     {
-      int x;  //declaration
+      int x; //declaration
       x = 123; //initialisation
 
       int y = 321; //declaration +initialisation
@@ -20,7 +20,7 @@ namespace BroCode
 
       Console.WriteLine("Your name is " + name_a);
       Console.WriteLine("Your age is " + age_a);
-      Console.WriteLine("Your height is " + height+"cm");
+      Console.WriteLine("Your height is " + height + "cm");
       Console.WriteLine("Are you alive " + alive);
       Console.WriteLine("Your symbol is " + symbol);
 
@@ -30,7 +30,7 @@ namespace BroCode
       const double pi = 3.14159;
 
       Console.WriteLine("the secret number is " + pi);
-      
+
       //type casting = Converting a value to a different data type
       //               Useful when we accept user input 
       //               Different data types can do different things
@@ -43,21 +43,125 @@ namespace BroCode
 
       int e = 321;
       string f = Convert.ToString(e);
-      
+
       Console.WriteLine(a);
       Console.WriteLine(a.GetType());
-      
+
       //User Input:
-      
+
       Console.WriteLine("What's your name?");
       string name = Console.ReadLine();
-      
+
       Console.WriteLine("What is your age?");
       int age = Convert.ToInt32(Console.ReadLine());
-      
+
       Console.WriteLine("Hello " + name);
       Console.WriteLine("You are   " + age + " years old");
 
+      // Random number:
+      Random random = new Random();
+      int num1 = random.Next(1, 7);
+      int num2 = random.Next(1, 7) + 1;
+
+      Console.WriteLine(num1);
+      Console.WriteLine(num2);
+
+
+
+      Random randomNum = new Random();
+      bool playAgain = true;
+      string player = "";
+      string computer = "";
+      string answer = "";
+
+      while (playAgain)
+      {
+        while (player != "ROCK" && player != "PAPER" && player != "SCISSOR")
+        {
+          Console.Write("Enter ROCK, PAPER, or SCISSOR: ");
+          player = Console.ReadLine();
+          player = player.ToUpper();
+        }
+
+        switch (randomNum.Next(1, 4))
+        {
+          case 1:
+            computer = "ROCK";
+            break;
+          case 2:
+            computer = "PAPER";
+            break;
+          case 3:
+            computer = "SCISSOR";
+            break;
+        }
+
+        Console.WriteLine("Player: " + player);
+        Console.WriteLine("Computer: " + computer);
+
+        switch (player)
+        {
+          case "ROCK":
+            if (computer == "ROCK")
+            {
+              Console.WriteLine("it's a draw!");
+            }
+            else if (computer == "PAPER")
+            {
+              Console.WriteLine("You lose!");
+            }
+            else
+            {
+              Console.WriteLine("You win!");
+            }
+
+            break;
+
+          case "PAPER":
+            if (computer == "ROCK")
+            {
+              Console.WriteLine("You win!");
+            }
+            else if (computer == "PAPER")
+            {
+              Console.WriteLine("it's a draw");
+            }
+            else
+            {
+              Console.WriteLine("You lose!");
+            }
+
+            break;
+          case "SCISSOR":
+            if (computer == "ROCK")
+            {
+              Console.WriteLine("You lose!");
+            }
+            else if (computer == "PAPER")
+            {
+              Console.WriteLine("You win!");
+            }
+            else
+            {
+              Console.WriteLine("it's a draw");
+            }
+
+            break;
+        }
+        Console.WriteLine("Would you like to play a again? (y/n)");
+        answer = Console.ReadLine();
+        answer = answer.ToUpper();
+
+        if (answer == "Y")
+        {
+          playAgain = true;
+        }
+        else if (answer == "N")
+        {
+          playAgain = false;
+        }
+      }
+      Console.WriteLine("Thanks for playing!");
     }
   }
 }
