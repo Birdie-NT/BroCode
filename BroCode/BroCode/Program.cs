@@ -30,6 +30,22 @@ namespace BroCode
       const double pi = 3.14159;
 
       Console.WriteLine("the secret number is " + pi);
+      
+      //type casting = Converting a value to a different data type
+      //               Useful when we accept user input 
+      //               Different data types can do different things
+
+      double a = 3.14;
+      int b = Convert.ToInt32(a);
+
+      int c = 123;
+      double d = Convert.ToDouble(c) + 0.1;
+
+      int e = 321;
+      string f = Convert.ToString(e);
+      
+      Console.WriteLine(a);
+      Console.WriteLine(a.GetType());
 
     }
   }
