@@ -12,14 +12,14 @@ namespace BroCode
       int y = 321; //declaration +initialisation
       int z = x + y;
 
-      int age = 21; // whole integer
+      int age_a = 21; // whole integer
       double height = 300.5; // decimal number
       bool alive = false;
-      string name = "Bro";
+      string name_a = "Bro";
       char symbol = '@';
 
-      Console.WriteLine("Your name is " + name);
-      Console.WriteLine("Your age is " + age);
+      Console.WriteLine("Your name is " + name_a);
+      Console.WriteLine("Your age is " + age_a);
       Console.WriteLine("Your height is " + height+"cm");
       Console.WriteLine("Are you alive " + alive);
       Console.WriteLine("Your symbol is " + symbol);
@@ -46,6 +46,17 @@ namespace BroCode
       
       Console.WriteLine(a);
       Console.WriteLine(a.GetType());
+      
+      //User Input:
+      
+      Console.WriteLine("What's your name?");
+      string name = Console.ReadLine();
+      
+      Console.WriteLine("What is your age?");
+      int age = Convert.ToInt32(Console.ReadLine());
+      
+      Console.WriteLine("Hello " + name);
+      Console.WriteLine("You are   " + age + " years old");
 
     }
   }
