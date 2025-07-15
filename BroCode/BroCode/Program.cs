@@ -162,6 +162,19 @@ namespace BroCode
         }
       }
       Console.WriteLine("Thanks for playing!");
+
+
+      String Birthdayname = "Bro";
+      int Birthdayage = 21;
+      SingHappyBirthday(Birthdayname, Birthdayage);
+    }
+
+    static void SingHappyBirthday(String birthdayBoy, int yearsOld)
+    {
+      Console.WriteLine("Happy birthday to you!");
+      Console.WriteLine("Happy birthday to you!");
+      Console.WriteLine("Happy birthday dear!" + birthdayBoy );
+      Console.WriteLine("You are"  + yearsOld + " years old!");
     }
   }
 }
